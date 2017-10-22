@@ -1,0 +1,29 @@
+{
+  "name": "express-error-handler",
+  "version": "1.0.0",
+  "description": "Error handling middleware for Express.js",
+  "main": "index.js",
+  "style": "error-handler.css", 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seggev319/express-error-handler.git"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "error",
+    "trace"
+  ],
+  "author": "Seggev Shoresh <shoresh319@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seggev319/express-error-handler/issues"
+  },
+  "homepage": "https://github.com/seggev319/express-error-handler#readme",
+  "peerDependencies": {
+    "express": "~4.13.4"
+  }
+}

@@ -1,0 +1,18 @@
+.error-trace {
+	@trace-bg-color: #f5f5f5;
+	.call-trace {
+		background: fade(average(#BF0A64, @trace-bg-color), 60%);
+	}
+
+	.nickname {
+		background: fade(average(#FF0DFF, @trace-bg-color), 60%);
+	}
+
+	.file-path {
+		background: fade(average(#FF530D, @trace-bg-color), 60%);
+	}
+
+	.line-num, .col-num {
+		background: fade(average(#E82C0C, @trace-bg-color), 75%);
+	}
+}
