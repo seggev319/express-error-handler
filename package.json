@@ -1,11 +1,12 @@
 {
   "name": "express-error-handler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Error handling middleware for Express.js",
-  "main": "index.js",
-  "style": "error-handler.css", 
+  "main": "dist/error-handler.js",
+  "style": "error-handler.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel ./src -d dist"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,14 @@
   "homepage": "https://github.com/seggev319/express-error-handler#readme",
   "peerDependencies": {
     "express": "~4.13.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }
