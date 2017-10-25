@@ -1,6 +1,6 @@
 {
   "name": "express-error-handler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Error handling middleware for Express.js",
   "main": "dist/error-handler.js",
   "style": "dist/error-handler.css",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/seggev319/express-error-handler#readme",
   "peerDependencies": {
-    "express": "~4.13.4"
+    "express": ">=4.13.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
