@@ -1,6 +1,5 @@
 /*
  * @todo mod regex for 'at [cwd]/views/game/levels/level-00.pug line 1'
- * @todo replace object-path with lodash
  * @todo use 'http-status-codes' package
  */
 
@@ -29,7 +28,6 @@ router.use(function devErrorHandler(err, req, res, next) {
 
   var _ = require('lodash');
   var pug = require('pug');
-  var ObjectPath = require("object-path");
   var sprintf = require('sprintf-js').sprintf;
 
   function stripHTML(html) {
@@ -146,9 +144,9 @@ router.use(function devErrorHandler(err, req, res, next) {
   });
 
   propPaths.forEach(function(propPath) {
-    let propValue = ObjectPath.get(renderParams, propPath).toString();
+    let propValue = _.get(renderParams, propPath).toString();
     propValue = abbreviateRootDir(propValue);
-    ObjectPath.set(renderParams, propPath, propValue);
+    _.set(renderParams, propPath, propValue);
   });
 
   res.render('error', renderParams);

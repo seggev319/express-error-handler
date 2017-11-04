@@ -1,6 +1,6 @@
 {
   "name": "express-error-handler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Error handling middleware for Express.js",
   "main": "dist/error-handler.js",
   "style": "dist/error-handler.css",
@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:styles": "npx lessc src/error-handler.less dist/error-handler.css",
     "build:scripts": "npx babel ./src -d dist",
-    "build": "npm run build:scripts && npm run build:styles"
+    "build": "npm run build:scripts && npm run build:styles",
+    "build:commit": "git add dist/",
+    "precommit": "npm run build && npm run build:commit"
   },
   "repository": {
     "type": "git",
@@ -32,11 +34,16 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "husky": "^0.14.3",
     "less": "^3.0.0-alpha.3"
   },
   "babel": {
     "presets": [
       "env"
     ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "sprintf-js": "^1.1.1"
   }
 }

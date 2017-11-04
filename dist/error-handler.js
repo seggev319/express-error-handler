@@ -2,7 +2,6 @@
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /*
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @todo mod regex for 'at [cwd]/views/game/levels/level-00.pug line 1'
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @todo replace object-path with lodash
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * @todo use 'http-status-codes' package
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */
 
@@ -32,7 +31,6 @@ router.use(function devErrorHandler(err, req, res, next) {
 
   var _ = require('lodash');
   var pug = require('pug');
-  var ObjectPath = require("object-path");
   var sprintf = require('sprintf-js').sprintf;
 
   function stripHTML(html) {
@@ -139,9 +137,9 @@ router.use(function devErrorHandler(err, req, res, next) {
   });
 
   propPaths.forEach(function (propPath) {
-    var propValue = ObjectPath.get(renderParams, propPath).toString();
+    var propValue = _.get(renderParams, propPath).toString();
     propValue = abbreviateRootDir(propValue);
-    ObjectPath.set(renderParams, propPath, propValue);
+    _.set(renderParams, propPath, propValue);
   });
 
   res.render('error', renderParams);
